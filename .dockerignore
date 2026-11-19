@@ -1,0 +1,9 @@
+node_modules
+public/js
+data
+data-share.log
+tools
+guide
+.git
+.claude
+.DS_Store

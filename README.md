@@ -2,6 +2,26 @@
 
 Cody Vibes lets several people write code **together, at the same time**, in the browser. You create a room and share its link. Everyone in the room then sees each other's typing and cursors live, can chat, and can run the code with output shared across the room.
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/aashiagrawal02/cody-vibes)
+
+---
+
+## 🌐 Run it online (free, from this GitHub repo)
+
+GitHub Pages can only host static pages, and Cody Vibes needs a live Node.js server, so it is hosted on [Render](https://render.com). Render builds it straight from this repository using the included `Dockerfile` and `render.yaml`.
+
+1. Click **Deploy to Render** above, and sign in to Render with your GitHub account.
+2. When asked for **SIGNUP_CODE**, type an invite code of your choice (for example `vibes-2026`). People need it to create an account.
+3. Click **Deploy Blueprint** and wait about 5–10 minutes for the first build.
+4. Open the link Render shows, such as `https://cody-vibes.onrender.com`.
+
+Every `git push` to `main` redeploys the app automatically.
+
+**Free plan limits:**
+- The app **sleeps after 15 minutes** with no visitors. The next visit wakes it in about a minute.
+- **Saved data resets** when the app sleeps or redeploys: accounts, rooms and chat start fresh. Download projects you want to keep as ZIP. A paid plan with a persistent disk keeps data permanently.
+- All languages work online, including **Java**, which the container installs.
+
 ---
 
 ## 🚀 Features

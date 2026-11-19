@@ -1,0 +1,19 @@
+# Render Blueprint: one-click deploy of Cody Vibes from GitHub.
+# https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: cody-vibes
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/config
+    autoDeploy: true
+    envVars:
+      # Secret for login tokens; Render generates a random one once.
+      - key: JWT_SECRET
+        generateValue: true
+      # Invite code people must enter to sign up. Render asks you for it when you deploy.
+      - key: SIGNUP_CODE
+        sync: false
+      # Require the invite code, because anyone who signs up can run code on the server.
+      - key: INVITE_REQUIRED
+        value: "1"
