@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard · Cody Vibes</title>
+  <link rel="icon" href="/img/logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body class="dashboard">
+  <div class="bg-glow"></div>
+  <header class="nav">
+    <a class="brand" href="/dashboard"><img src="/img/logo.svg" alt="" /> Cody <span>Vibes</span></a>
+    <div class="nav-right">
+      <span id="me" class="me"></span>
+      <button class="btn btn-ghost" id="logout">Log out</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="page-title">Hey <span id="hello-name" class="gradient-text"></span> 👋</h1>
+    <p class="muted">Start a new coding room or jump into one your friends shared.</p>
+
+    <div class="grid-2">
+      <form class="card" id="create-form">
+        <h2>✨ Create a room</h2>
+        <label>Room name
+          <input name="name" maxlength="60" placeholder="e.g. DSA practice" required />
+        </label>
+        <label>Language / template
+          <select name="language" id="language"></select>
+        </label>
+        <button class="btn btn-primary btn-block" type="submit">Create room</button>
+      </form>
+
+      <form class="card" id="join-form">
+        <h2>🔗 Join a room</h2>
+        <label>Room code or invite link
+          <input name="code" placeholder="abc-def-ghj or http://…/room/abc-def-ghj" required />
+        </label>
+        <p class="muted small">Ask the room owner to share their invite link with you.</p>
+        <button class="btn btn-secondary btn-block" type="submit">Join room</button>
+      </form>
+    </div>
+
+    <div class="section-head">
+      <h2>Your rooms</h2>
+      <button class="btn btn-ghost small" id="refresh">↻ Refresh</button>
+    </div>
+    <div id="rooms" class="rooms-grid"></div>
+  </main>
+
+  <script type="module" src="/js/dashboard.js"></script>
+</body>
+</html>

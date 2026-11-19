@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Room · Cody Vibes</title>
+  <link rel="icon" href="/img/logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body class="room">
+  <div id="loading" class="loading-screen">
+    <img src="/img/logo.svg" alt="" class="spin-logo" />
+    <p id="loading-text">Joining room…</p>
+  </div>
+
+  <header class="room-header">
+    <a class="brand small-brand" href="/dashboard" title="Back to dashboard"><img src="/img/logo.svg" alt="" /> <span class="hide-sm">Cody <span>Vibes</span></span></a>
+    <div class="room-title">
+      <button id="room-name" class="room-name" title="Room name"></button>
+      <button id="room-code" class="code-chip" title="Copy invite link"></button>
+    </div>
+    <div class="header-spacer"></div>
+    <div id="header-avatars" class="avatar-stack"></div>
+    <span id="conn" class="conn"><span class="dot"></span><span class="conn-text">Connecting…</span></span>
+    <button id="invite" class="btn btn-ghost small">🔗 Invite</button>
+    <a id="download" class="btn btn-ghost small hide-sm">⬇ Download</a>
+    <button id="run" class="btn btn-run"><span class="run-icon">▶</span> <span class="run-label">Run</span></button>
+  </header>
+
+  <div class="room-body">
+    <aside class="sidebar">
+      <div class="panel-head">
+        <span>Files</span>
+        <button id="new-file" class="icon-btn" title="New file">＋</button>
+      </div>
+      <ul id="file-list" class="file-list"></ul>
+
+      <div class="panel-head"><span>Online</span><span id="online-count" class="count-badge">0</span></div>
+      <ul id="people" class="people"></ul>
+    </aside>
+
+    <section class="editor-area">
+      <div class="editor-bar">
+        <span id="current-file" class="current-file">—</span>
+        <span id="file-viewers" class="file-viewers"></span>
+        <span class="editor-bar-spacer"></span>
+        <span class="muted small hide-sm">Auto-saved · Ctrl/⌘+Enter to run</span>
+      </div>
+      <div id="editor" class="editor"></div>
+      <div id="no-file" class="no-file hidden">
+        <p>No files in this room yet.</p>
+        <button class="btn btn-primary" id="no-file-create">Create a file</button>
+      </div>
+    </section>
+
+    <aside class="right-panel">
+      <div class="tabs panel-tabs">
+        <button class="tab active" data-pane="console">Console</button>
+        <button class="tab" data-pane="chat">Chat <span id="unread" class="unread hidden">0</span></button>
+        <button class="tab" data-pane="preview">Preview</button>
+      </div>
+
+      <div class="pane" id="pane-console">
+        <div class="pane-toolbar">
+          <span id="run-status" class="run-status muted small">Ready</span>
+          <span class="editor-bar-spacer"></span>
+          <button class="btn btn-ghost tiny" id="toggle-stdin">Input (stdin)</button>
+          <button class="btn btn-ghost tiny" id="clear-output">Clear</button>
+        </div>
+        <textarea id="stdin" class="stdin hidden" placeholder="Program input (stdin). Each line is read by input() / cin / Scanner…"></textarea>
+        <pre id="output" class="output"><span class="muted">Press ▶ Run to execute the open file. Output is shared with everyone in the room.</span></pre>
+      </div>
+
+      <div class="pane hidden" id="pane-chat">
+        <div id="messages" class="messages"></div>
+        <form id="chat-form" class="chat-form">
+          <input id="chat-input" placeholder="Message the room…" maxlength="2000" autocomplete="off" />
+          <button class="btn btn-primary small" type="submit">Send</button>
+        </form>
+      </div>
+
+      <div class="pane hidden" id="pane-preview">
+        <div class="pane-toolbar">
+          <span class="muted small">Live preview of <b>index.html</b></span>
+          <span class="editor-bar-spacer"></span>
+          <button class="btn btn-ghost tiny" id="refresh-preview">↻ Refresh</button>
+          <button class="btn btn-ghost tiny" id="open-preview">Open in tab</button>
+        </div>
+        <iframe id="preview" class="preview" sandbox="allow-scripts allow-modals allow-forms" title="Preview"></iframe>
+      </div>
+    </aside>
+  </div>
+
+  <script type="module" src="/js/room.js"></script>
+</body>
+</html>

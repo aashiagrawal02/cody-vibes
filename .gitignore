@@ -1,0 +1,14 @@
+# Dependencies and build output (recreated by `npm install` / `npm run build`)
+node_modules/
+public/js/
+
+# Runtime data: user accounts, password hashes, login secret, invite code, room files
+data/
+data-share.log
+
+# Downloaded tunnel binary (42 MB, platform-specific; see README "Share a public link")
+tools/
+
+# Local editor / tool settings
+.claude/
+.DS_Store

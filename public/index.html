@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cody Vibes — Code together, in real time</title>
+  <link rel="icon" href="/img/logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body class="landing">
+  <div class="bg-glow"></div>
+  <header class="nav">
+    <a class="brand" href="/"><img src="/img/logo.svg" alt="" /> Cody <span>Vibes</span></a>
+  </header>
+
+  <main class="hero">
+    <section class="hero-text">
+      <span class="pill">⚡ Real-time collaborative coding</span>
+      <h1>Code together.<br /><span class="gradient-text">Vibe together.</span></h1>
+      <p class="lead">Create a room, share the link, and write code with your friends at the same time — live cursors, shared files, group chat and a built-in runner for JavaScript, Python, C, C++, Java and Ruby.</p>
+      <ul class="features">
+        <li><b>👥 Live multi-cursor editing</b><span>Conflict-free sync powered by CRDTs (Yjs)</span></li>
+        <li><b>▶️ Run code instantly</b><span>Output is shared with everyone in the room</span></li>
+        <li><b>💬 Built-in chat</b><span>Discuss without leaving the editor</span></li>
+        <li><b>🌐 Live web preview</b><span>HTML/CSS/JS projects render as you type</span></li>
+      </ul>
+    </section>
+
+    <section class="auth-card card">
+      <p id="invite-banner" class="invite-banner hidden"></p>
+      <div class="tabs">
+        <button class="tab active" data-mode="login">Log in</button>
+        <button class="tab" data-mode="signup">Sign up</button>
+      </div>
+      <form id="auth-form" autocomplete="on">
+        <label>Username
+          <input name="username" required minlength="3" maxlength="20" placeholder="e.g. akshat" autocomplete="username" />
+        </label>
+        <label>Password
+          <input name="password" type="password" required minlength="6" placeholder="At least 6 characters" autocomplete="current-password" />
+        </label>
+        <label id="invite-label" class="hidden"><span id="invite-label-text">Invite code (optional)</span>
+          <input name="inviteCode" placeholder="Leave empty if you don’t have one" autocomplete="off" />
+        </label>
+        <p class="form-error" id="auth-error"></p>
+        <button class="btn btn-primary btn-block" type="submit" id="auth-submit">Log in</button>
+      </form>
+      <p class="muted small center" id="auth-hint">New here? <a href="#" data-switch="signup">Create an account</a></p>
+    </section>
+  </main>
+
+  <footer class="footer muted small">Cody Vibes · Built as a minor project</footer>
+  <script type="module" src="/js/landing.js"></script>
+</body>
+</html>
